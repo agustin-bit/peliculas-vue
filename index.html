@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Api Movies</title>
+
+    <!-- Metadata para PWA -->
+    <!-- SEO optimización -->
+    <meta name="MobileOptimized" content="width">
+    <meta name="HandheldFriendly" content="true">
+    <!-- Color barra de estado en Android -->
+    <meta name="theme-color" content="#efebce">
+    <!-- Modificar barra de estado en iOS -->
+    <meta name="mobile-web-app-capable" content="yes"> <!-- lock unlock -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Iconos -->
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./img/favicon.png">
+    <link rel="apple-touch-icon" href="./img/favicon.png">
+    
+    <!-- Manifest.json -->
+    <link rel="manifest" href="./maifest.json">
+
+    <!-- CSS Style links (bootstrap, CSS propio) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>  
+    
+    
+    <div id="app">
+
+      <div class="content">
+
+      <div class="cabeza">
+      
+        <h1>{{title}}</h1>
+
+        <hr />
+
+        <form @submit.prevent="getMovie">
+          <label>
+            Movie Name: <input type="text" v-model.trim="movieTitle" />
+          </label>
+          <input type="submit" value="Get Movie" />
+        </form>
+
+        <hr />
+      </div>
+
+      <div class="container">
+        <h4><strong>Title:</strong><span>{{movieData.Title}}</span></h4>
+        <h5><strong>Year:</strong><span>{{movieData.Year}}</span></h5>
+        <h5>
+          <strong>Genre:</strong> {{movieData.Genre}}
+        </h5>
+        <h5>
+          <strong>Actors:</strong> <span>{{movieData.Actors}}</span>
+        </h5>
+
+        <img :src="movieData.Poster" class="img-fluid poster" :alt="movieData.imdbID" />
+      </div>    
+  </div>
+
+
+
+    </div>
+
+    <script src="./js/main.js"></script>
+    <script src="./js/mountApp.js"></script>
+    <script src="./load.js"></script>
+
+  </body>
+</html>

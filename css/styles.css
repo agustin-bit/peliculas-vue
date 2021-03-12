@@ -1,0 +1,13 @@
+body,
+html {
+  margin: 3%;
+}
+
+.poster {
+  align-items: center;
+  width: 95%;
+}
+
+.cabeza {
+  text-align: center;
+}
